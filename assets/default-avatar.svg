@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c5cfc"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c5cfc"/>
+      <stop offset="50%" style="stop-color:#f4c430"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ring -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="url(#ring)" stroke-width="3"/>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="44" fill="url(#bg)"/>
+
+  <!-- Person icon -->
+  <circle cx="50" cy="38" r="14" fill="rgba(255,255,255,0.9)"/>
+  <ellipse cx="50" cy="80" rx="22" ry="16" fill="rgba(255,255,255,0.9)"/>
+</svg>
