@@ -143,7 +143,7 @@
       document.getElementById('offer-form-title').textContent = 'অফার এডিট করুন';
       document.getElementById('offer-edit-id').value = id;
       document.getElementById('f-name').value = o.name || '';
-      document.getElementById('f-category').value = o.category || 'entertainment';
+      document.getElementById('f-category').value = o.category || '';
       document.getElementById('f-price').value = o.price || '';
       document.getElementById('f-discount').value = o.discount || '';
       document.getElementById('f-pic').value = o.pic || '';
@@ -391,12 +391,7 @@
     <input type="hidden" id="offer-edit-id" />
     <form id="offer-form" onsubmit="return false;">
       <input type="text" id="f-name" placeholder="অফারের নাম *" class="admin-input" required />
-      <select id="f-category" class="admin-input admin-select">
-        <option value="facebook">ফেসবুক সার্ভিস</option>
-        <option value="entertainment">বিনোদন সাবস্ক্রিপশন</option>
-        <option value="ai">AI সাবস্ক্রিপশন</option>
-        <option value="other">অন্যান্য</option>
-      </select>
+      <input type="text" id="f-category" placeholder="ক্যাটাগরি লিখুন (যেমন: Gaming, VPN, AI Tools, বিনোদন)" class="admin-input" required />
       <input type="number" id="f-price" placeholder="মূল্য (৳)" class="admin-input" />
       <input type="number" id="f-discount" placeholder="ডিসকাউন্ট (%)" class="admin-input" min="0" max="100" />
       <input type="url" id="f-pic" placeholder="ছবির URL" class="admin-input" />
