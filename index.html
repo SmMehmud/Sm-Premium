@@ -37,12 +37,57 @@
 
   <!-- HOME -->
   <div class="page active" id="page-home">
-    <div class="hero-banner">
-      <div class="hero-text">
-        <h1>স্বাগতম 👑</h1>
-        <p>সেরা প্রিমিয়াম সার্ভিস পাচ্ছেন একটাই জায়গায়</p>
+
+    <!-- PREMIUM HERO BANNER -->
+    <div class="hero-banner-new">
+      <!-- Animated background orbs -->
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+
+      <!-- Floating service icons -->
+      <div class="hero-float-icons">
+        <span class="ficon" style="--d:0s;--x:10%;--y:20%">▶️</span>
+        <span class="ficon" style="--d:0.5s;--x:80%;--y:15%">🤖</span>
+        <span class="ficon" style="--d:1s;--x:70%;--y:70%">🎵</span>
+        <span class="ficon" style="--d:1.5s;--x:15%;--y:75%">🎬</span>
+        <span class="ficon" style="--d:2s;--x:50%;--y:10%">🎮</span>
+      </div>
+
+      <!-- Main content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          বাংলাদেশের সেরা প্রিমিয়াম স্টোর
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-title-sm">SM</span>
+          <span class="hero-title-premium">PREMIUM</span>
+          <span class="hero-crown">👑</span>
+        </h1>
+        <p class="hero-sub">YouTube • Netflix • Spotify • ChatGPT • Canva Pro</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num">৫০+</span>
+            <span class="stat-label">সার্ভিস</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">১ঘণ্টা</span>
+            <span class="stat-label">ডেলিভারি</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">২৪/৭</span>
+            <span class="stat-label">সাপোর্ট</span>
+          </div>
+        </div>
+        <button class="hero-cta" onclick="navigateTo('offers')">
+          সকল অফার দেখুন →
+        </button>
       </div>
     </div>
+
     <div class="page-content" id="offers-home"><div class="loading-spinner"></div></div>
   </div>
 
