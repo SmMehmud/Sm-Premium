@@ -276,13 +276,6 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 // ── Offers ──
-const CATS = {
-  facebook:      { label: 'ফেসবুক সার্ভিস',          icon: '📘' },
-  entertainment: { label: 'বিনোদনমূলক সাবস্ক্রিপশন', icon: '🎬' },
-  ai:            { label: 'AI সাবস্ক্রিপশনস',         icon: '🤖' },
-  other:         { label: 'অন্যান্য সার্ভিস',          icon: '⚡' }
-};
-
 function loadOffers() {
   onValue(ref(db, 'offers'), snap => {
     const data = snap.val() || {};
@@ -295,15 +288,25 @@ function loadOffers() {
 function renderOffers(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return;
+  // Dynamic category — group by whatever category name admin typed
+  const cats = [...new Set(allOffers.map(o => o.category).filter(Boolean))];
   let html = '';
-  Object.entries(CATS).forEach(([cat, info]) => {
+  cats.forEach(cat => {
     const items = allOffers.filter(o => o.category === cat);
     if (!items.length) return;
     html += `<div class="category-section">
-      <h2 class="category-title">${info.icon} ${info.label}</h2>
+      <h2 class="category-title">✦ ${cat}</h2>
       <div class="offers-grid">${items.map(offerCard).join('')}</div>
     </div>`;
   });
+  // Offers with no category
+  const noCat = allOffers.filter(o => !o.category);
+  if (noCat.length) {
+    html += `<div class="category-section">
+      <h2 class="category-title">✦ অন্যান্য</h2>
+      <div class="offers-grid">${noCat.map(offerCard).join('')}</div>
+    </div>`;
+  }
   el.innerHTML = html || '<p class="empty">কোনো অফার নেই</p>';
 }
 
