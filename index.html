@@ -37,15 +37,11 @@
 
   <!-- HOME -->
   <div class="page active" id="page-home">
-
-    <!-- PREMIUM HERO BANNER -->
+    <!-- HERO BANNER -->
     <div class="hero-banner-new">
-      <!-- Animated background orbs -->
       <div class="hero-orb orb1"></div>
       <div class="hero-orb orb2"></div>
       <div class="hero-orb orb3"></div>
-
-      <!-- Floating service icons -->
       <div class="hero-float-icons">
         <span class="ficon" style="--d:0s;--x:10%;--y:20%">▶️</span>
         <span class="ficon" style="--d:0.5s;--x:80%;--y:15%">🤖</span>
@@ -53,8 +49,6 @@
         <span class="ficon" style="--d:1.5s;--x:15%;--y:75%">🎬</span>
         <span class="ficon" style="--d:2s;--x:50%;--y:10%">🎮</span>
       </div>
-
-      <!-- Main content -->
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
@@ -66,29 +60,45 @@
           <span class="hero-crown">👑</span>
         </h1>
         <p class="hero-sub">YouTube • Netflix • Spotify • ChatGPT • Canva Pro</p>
+        <!-- REAL-TIME STATS -->
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="stat-num">৫০+</span>
-            <span class="stat-label">সার্ভিস</span>
+            <span class="stat-num" id="stat-active-offers">-</span>
+            <span class="stat-label">অ্যাক্টিভ অফার</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
-            <span class="stat-num">১ঘণ্টা</span>
-            <span class="stat-label">ডেলিভারি</span>
+            <span class="stat-num" id="stat-total-users">-</span>
+            <span class="stat-label">মোট ইউজার</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
-            <span class="stat-num">২৪/৭</span>
-            <span class="stat-label">সাপোর্ট</span>
+            <span class="stat-num" id="stat-daily-reports">-</span>
+            <span class="stat-label">আজকের রিপোর্ট</span>
           </div>
         </div>
-        <button class="hero-cta" onclick="navigateTo('offers')">
-          সকল অফার দেখুন →
-        </button>
+        <button class="hero-cta" onclick="navigateTo('offers')">সকল অফার দেখুন →</button>
       </div>
     </div>
 
     <div class="page-content" id="offers-home"><div class="loading-spinner"></div></div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <span class="logo-sm">SM</span><span class="logo-premium">PREMIUM</span><span class="logo-crown">👑</span>
+      </div>
+      <p class="footer-tagline" id="footer-tagline">বাংলাদেশের সেরা প্রিমিয়াম সার্ভিস মার্কেটপ্লেস</p>
+      <div class="footer-social" id="footer-social"></div>
+      <div class="footer-links">
+        <button class="footer-link" onclick="navigateTo('privacy')">🔒 Privacy Policy</button>
+        <button class="footer-link" onclick="navigateTo('faq')">❓ FAQ</button>
+        <button class="footer-link" onclick="navigateTo('terms')">📄 Terms</button>
+        <button class="footer-link" onclick="navigateTo('developer')">💻 Developer</button>
+      </div>
+      <div class="footer-contact" id="footer-contact"></div>
+      <p class="footer-copy" id="footer-copy">© 2025 SM Premium. All Rights Reserved.</p>
+    </footer>
   </div>
 
   <!-- OFFERS -->
@@ -114,26 +124,8 @@
   <!-- REPORT -->
   <div class="page" id="page-report">
     <div class="page-header"><h2>🗳️ রিপোর্ট করুন</h2></div>
-    <div class="page-content">
-      <div class="report-form">
-        <div class="form-group">
-          <label>📧 ইমেইল</label>
-          <input type="email" id="report-email" placeholder="আপনার ইমেইল" class="form-input" />
-        </div>
-        <div class="form-group">
-          <label>👤 নাম</label>
-          <input type="text" id="report-name" placeholder="আপনার নাম" class="form-input" />
-        </div>
-        <div class="form-group">
-          <label>📍 জেলা</label>
-          <input type="text" id="report-district" placeholder="আপনার জেলা" class="form-input" />
-        </div>
-        <div class="form-group">
-          <label>💬 মতামত</label>
-          <textarea id="report-message" placeholder="আপনার মতামত লিখুন..." class="form-input form-textarea"></textarea>
-        </div>
-        <button class="glow-btn full-btn" id="report-submit-btn">📤 পাঠান</button>
-      </div>
+    <div class="page-content" id="report-page-content">
+      <!-- login gate অথবা form এখানে JS দিয়ে render হবে -->
     </div>
   </div>
 
@@ -150,6 +142,33 @@
       <h2>💻 Developer Info</h2>
     </div>
     <div class="page-content" id="developer-content"><div class="loading-spinner"></div></div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="page" id="page-privacy">
+    <div class="page-header back-header">
+      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <h2>🔒 Privacy Policy</h2>
+    </div>
+    <div class="page-content policy-content" id="privacy-content"><div class="loading-spinner"></div></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="page" id="page-faq">
+    <div class="page-header back-header">
+      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <h2>❓ FAQ</h2>
+    </div>
+    <div class="page-content policy-content" id="faq-content"><div class="loading-spinner"></div></div>
+  </div>
+
+  <!-- TERMS -->
+  <div class="page" id="page-terms">
+    <div class="page-header back-header">
+      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <h2>📄 Terms of Service</h2>
+    </div>
+    <div class="page-content policy-content" id="terms-content"><div class="loading-spinner"></div></div>
   </div>
 
 </main>
@@ -198,7 +217,6 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChang
 import { getDatabase, ref, onValue, push, set, update, remove, get }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// ── Firebase Init ──
 const app = initializeApp({
   apiKey: "AIzaSyD-Jghs-vQjiCAxT1HPpixZd7tBRy_dy5c",
   authDomain: "sm-premium-697f2.firebaseapp.com",
@@ -209,13 +227,12 @@ const app = initializeApp({
   appId: "1:1043748679307:web:dd62fa7b134542f8792e8e"
 });
 const auth = getAuth(app);
-const db   = getDatabase(app);
+const db = getDatabase(app);
 const provider = new GoogleAuthProvider();
 
-// ── State ──
 let currentUser = null;
 let contactInfo = {};
-let allOffers   = [];
+let allOffers = [];
 const pageStack = ['home'];
 
 // ── Back Button ──
@@ -243,6 +260,10 @@ window.navigateTo = function(page, push = true) {
   if (page === 'news') loadNews();
   if (page === 'profile') loadProfile();
   if (page === 'developer') loadDeveloper();
+  if (page === 'report') loadReportPage();
+  if (page === 'privacy') loadPolicy('privacy');
+  if (page === 'faq') loadPolicy('faq');
+  if (page === 'terms') loadPolicy('terms');
 };
 
 // ── Auth ──
@@ -253,13 +274,11 @@ window.loginWithGoogle = async () => {
 
 onAuthStateChanged(auth, async (user) => {
   currentUser = user;
-  // Update UI
   document.getElementById('login-btn').style.display = user ? 'none' : 'flex';
   const pic = document.getElementById('nav-profile-pic');
   if (user) {
     pic.src = user.photoURL || 'assets/default-avatar.svg';
     pic.style.display = 'block';
-    // Save new user
     const snap = await get(ref(db, `users/${user.uid}`));
     if (!snap.exists()) {
       await set(ref(db, `users/${user.uid}`), {
@@ -270,10 +289,67 @@ onAuthStateChanged(auth, async (user) => {
   } else {
     pic.style.display = 'none';
   }
-  // Load settings
   onValue(ref(db, 'settings/contact'), s => { contactInfo = s.val() || {}; });
   loadOffers();
+  loadHeroStats();
+  loadFooter();
 });
+
+// ── Hero Real-time Stats ──
+function loadHeroStats() {
+  onValue(ref(db, 'offers'), snap => {
+    const data = snap.val() || {};
+    const active = Object.values(data).filter(o => !o.stockOut).length;
+    const el = document.getElementById('stat-active-offers');
+    if (el) el.textContent = active + '+';
+  });
+  onValue(ref(db, 'users'), snap => {
+    const el = document.getElementById('stat-total-users');
+    if (el) el.textContent = snap.exists() ? Object.keys(snap.val()).length + '+' : '0';
+  });
+  onValue(ref(db, 'reports'), snap => {
+    const data = snap.val() || {};
+    const today = new Date(); today.setHours(0,0,0,0);
+    const daily = Object.values(data).filter(r => r.createdAt >= today.getTime()).length;
+    const el = document.getElementById('stat-daily-reports');
+    if (el) el.textContent = daily;
+  });
+}
+
+// ── Footer ──
+function loadFooter() {
+  onValue(ref(db, 'settings/footer'), snap => {
+    const f = snap.val() || {};
+    const tagline = document.getElementById('footer-tagline');
+    if (tagline && f.tagline) tagline.textContent = f.tagline;
+    const copy = document.getElementById('footer-copy');
+    if (copy) copy.textContent = f.copyright || '© 2025 SM Premium. All Rights Reserved.';
+    const social = document.getElementById('footer-social');
+    if (social) {
+      social.innerHTML =
+        (f.telegram ? `<a href="${f.telegram}" class="footer-social-btn tg" target="_blank">✈️</a>` : '') +
+        (f.whatsapp ? `<a href="${f.whatsapp}" class="footer-social-btn wa" target="_blank">💬</a>` : '') +
+        (f.facebook ? `<a href="${f.facebook}" class="footer-social-btn fb" target="_blank">👤</a>` : '') +
+        (f.youtube  ? `<a href="${f.youtube}"  class="footer-social-btn yt" target="_blank">▶️</a>` : '');
+    }
+    const contact = document.getElementById('footer-contact');
+    if (contact && f.contactText) {
+      contact.innerHTML = `<p class="footer-contact-text">${f.contactText}</p>`;
+    }
+  });
+}
+
+// ── Policy Pages ──
+function loadPolicy(type) {
+  const el = document.getElementById(type + '-content');
+  if (!el) return;
+  onValue(ref(db, 'settings/pages/' + type), snap => {
+    const text = snap.val() || '';
+    el.innerHTML = text
+      ? `<div class="policy-body">${text.replace(/\n/g, '<br/>')}</div>`
+      : '<p class="empty">এখনো যোগ করা হয়নি</p>';
+  }, {onlyOnce: true});
+}
 
 // ── Offers ──
 function loadOffers() {
@@ -288,7 +364,6 @@ function loadOffers() {
 function renderOffers(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return;
-  // Dynamic category — group by whatever category name admin typed
   const cats = [...new Set(allOffers.map(o => o.category).filter(Boolean))];
   let html = '';
   cats.forEach(cat => {
@@ -299,7 +374,6 @@ function renderOffers(containerId) {
       <div class="offers-grid">${items.map(offerCard).join('')}</div>
     </div>`;
   });
-  // Offers with no category
   const noCat = allOffers.filter(o => !o.category);
   if (noCat.length) {
     html += `<div class="category-section">
@@ -310,17 +384,21 @@ function renderOffers(containerId) {
   el.innerHTML = html || '<p class="empty">কোনো অফার নেই</p>';
 }
 
+// ── Offer Card (badge fix: discount উপরে, stock out নিচে) ──
 function offerCard(o) {
   return `<div class="offer-card" onclick="openOffer('${o.id}')">
     <div class="offer-img-wrap">
-      ${o.pic ? `<img src="${o.pic}" alt="${o.name}" loading="lazy"/>` : `<div class="offer-img-placeholder">${(o.name||'?').charAt(0)}</div>`}
-      ${o.stockOut ? '<span class="badge stock-out">STOCK OUT</span>' : ''}
+      ${o.pic
+        ? `<img src="${o.pic}" alt="${o.name}" loading="lazy"/>`
+        : `<div class="offer-img-placeholder">${(o.name||'?').charAt(0)}</div>`}
       ${o.discount ? `<span class="badge discount">-${o.discount}%</span>` : ''}
+      ${o.stockOut ? '<span class="badge stock-out">STOCK OUT</span>' : ''}
     </div>
     <p class="offer-name">${o.name||''}</p>
   </div>`;
 }
 
+// ── Offer Detail ──
 window.openOffer = function(id) {
   const o = allOffers.find(x => x.id === id);
   if (!o) return;
@@ -341,12 +419,32 @@ window.openOffer = function(id) {
       ${o.description ? `<p class="detail-desc">${o.description}</p>` : ''}
       ${o.stockOut
         ? '<div class="stock-out-banner">⚠️ স্টক আউট</div>'
-        : `<button class="contact-btn glow-btn" onclick="showContactModal('${o.id}','${o.name}')">📲 Contact for Buy</button>`}
+        : `<button class="contact-btn glow-btn" onclick="requireLoginForContact('${o.id}','${o.name}')">📲 Contact for Buy</button>`}
     </div>`;
   navigateTo('offer-detail');
 };
 
-// ── Contact ──
+// ── Login Gate for Contact ──
+window.requireLoginForContact = function(id, name) {
+  if (!currentUser) {
+    showLoginGateModal();
+    return;
+  }
+  showContactModal(id, name);
+};
+
+function showLoginGateModal() {
+  const modal = document.getElementById('links-modal');
+  modal.innerHTML = `<div class="links-modal-box">
+    <button class="modal-close" onclick="closeContactModal()">✕</button>
+    <div class="links-modal-title">🔐 লগইন প্রয়োজন</div>
+    <p class="links-modal-sub" style="color:var(--text2);font-size:13px;margin-bottom:20px;">অর্ডার করতে আগে লগইন করুন</p>
+    <button class="glow-btn" onclick="closeContactModal();loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
+  </div>`;
+  modal.classList.add('active');
+}
+
+// ── Contact Modal ──
 window.showContactModal = function(id, name) {
   window._offerName = name;
   document.getElementById('contact-offer-name').textContent = name;
@@ -436,8 +534,7 @@ function loadComments(id) {
   onValue(ref(db, `news/${id}/comments`), snap => {
     const el = document.getElementById(`clist-${id}`);
     if (!el) return;
-    const data = snap.val() || {};
-    const items = Object.values(data);
+    const items = Object.values(snap.val() || {});
     el.innerHTML = items.length
       ? items.map(c=>`<div class="comment-item"><span class="comment-name">${c.name}</span><span class="comment-text">${c.text}</span></div>`).join('')
       : '<p class="empty-small">কোনো মন্তব্য নেই</p>';
@@ -457,6 +554,51 @@ window.postComment = async function(id) {
   loadComments(id);
 };
 
+// ── Report Page (Login Gate) ──
+function loadReportPage() {
+  const el = document.getElementById('report-page-content');
+  if (!el) return;
+  if (!currentUser) {
+    el.innerHTML = `<div class="login-wall">
+      <div class="login-wall-icon">🗳️</div>
+      <p>রিপোর্ট করতে আগে লগইন করুন</p>
+      <button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
+    </div>`;
+    return;
+  }
+  el.innerHTML = `<div class="report-form">
+    <div class="form-group">
+      <label>📧 ইমেইল</label>
+      <input type="email" id="report-email" placeholder="আপনার ইমেইল" class="form-input" value="${currentUser.email}" />
+    </div>
+    <div class="form-group">
+      <label>👤 নাম</label>
+      <input type="text" id="report-name" placeholder="আপনার নাম" class="form-input" value="${currentUser.displayName||''}" />
+    </div>
+    <div class="form-group">
+      <label>📍 জেলা</label>
+      <input type="text" id="report-district" placeholder="আপনার জেলা" class="form-input" />
+    </div>
+    <div class="form-group">
+      <label>💬 মতামত</label>
+      <textarea id="report-message" placeholder="আপনার মতামত লিখুন..." class="form-input form-textarea"></textarea>
+    </div>
+    <button class="glow-btn full-btn" onclick="submitReport()">📤 পাঠান</button>
+  </div>`;
+}
+
+window.submitReport = async function() {
+  if (!currentUser) { showToast('লগইন করুন'); return; }
+  const email    = document.getElementById('report-email')?.value.trim();
+  const name     = document.getElementById('report-name')?.value.trim();
+  const district = document.getElementById('report-district')?.value.trim();
+  const message  = document.getElementById('report-message')?.value.trim();
+  if (!email||!name||!district||!message) { showToast('সব ঘর পূরণ করুন'); return; }
+  await push(ref(db,'reports'), {email,name,district,message,userId:currentUser.uid,createdAt:Date.now()});
+  showToast('রিপোর্ট পাঠানো হয়েছে ✅');
+  setTimeout(() => navigateTo('home'), 1500);
+};
+
 // ── Profile ──
 function loadProfile() {
   const el = document.getElementById('profile-content');
@@ -465,7 +607,7 @@ function loadProfile() {
     el.innerHTML = `<div class="login-wall">
       <div class="login-wall-icon">👤</div>
       <p>প্রোফাইল দেখতে লগইন করুন</p>
-      <button class="glow-btn" onclick="loginWithGoogle()">Google দিয়ে লগইন</button>
+      <button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
     </div>`;
     return;
   }
@@ -542,19 +684,6 @@ function loadDeveloper() {
   }, {onlyOnce: true});
 }
 
-// ── Report ──
-document.getElementById('report-submit-btn').addEventListener('click', async () => {
-  const email    = document.getElementById('report-email').value.trim();
-  const name     = document.getElementById('report-name').value.trim();
-  const district = document.getElementById('report-district').value.trim();
-  const message  = document.getElementById('report-message').value.trim();
-  if (!email||!name||!district||!message) { showToast('সব ঘর পূরণ করুন'); return; }
-  await push(ref(db,'reports'), {email,name,district,message,createdAt:Date.now()});
-  showToast('রিপোর্ট পাঠানো হয়েছে ✅');
-  ['report-email','report-name','report-district','report-message'].forEach(id => document.getElementById(id).value='');
-  setTimeout(() => navigateTo('home'), 1500);
-});
-
 // ── Toast ──
 window.showToast = function(msg) {
   const t = document.getElementById('toast');
@@ -562,7 +691,6 @@ window.showToast = function(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 };
 
-// ── Init ──
 navigateTo('home', false);
 </script>
 </body>
