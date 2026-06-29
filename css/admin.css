@@ -217,3 +217,28 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 
 /* ── Empty ── */
 .empty { text-align: center; color: var(--text3); padding: 30px; font-size: 14px; }
+
+/* ── New Dashboard Stats Grid ── */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px; padding: 12px 16px;
+}
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 8px; text-align: center; }
+.stat-card span { font-size: 22px; font-weight: 800; display: block; margin-bottom: 4px; }
+.stat-card p { font-size: 10px; color: var(--text3); }
+.stat-card.purple span { color: #a78bfa; }
+.stat-card.green  span { color: #22d3a3; }
+.stat-card.red    span { color: #f43f5e; }
+.stat-card.blue   span { color: #60a5fa; }
+.stat-card.teal   span { color: #2dd4bf; }
+.stat-card.indigo span { color: #818cf8; }
+.stat-card.orange span { color: #fb923c; }
+.stat-card.yellow span { color: #f4c430; }
+.stat-card.pink   span { color: #f472b6; }
+
+/* report time */
+.report-time { font-size: 10px; color: var(--text3); margin-top: 4px; }
+
+/* large textarea */
+.admin-textarea.large { min-height: 150px; }
