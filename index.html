@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#0a0a1a" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <meta name="theme-color" content="#0a0a1a"/>
   <title>SM Premium 👑 - প্রিমিয়াম সার্ভিস মার্কেটপ্লেস বাংলাদেশ</title>
-  <meta name="description" content="SM Premium - বাংলাদেশের সেরা প্রিমিয়াম সার্ভিস মার্কেটপ্লেস। YouTube, Netflix, Spotify, ChatGPT, Claude AI, Canva Pro সহ সব প্রিমিয়াম সার্ভিস সবচেয়ে কম দামে।" />
-  <meta name="keywords" content="SM Premium, SM MEHMUD, প্রিমিয়াম সার্ভিস, YouTube Premium, Netflix Bangladesh, Spotify Premium, ChatGPT Plus, Claude AI, Canva Pro, সাবস্ক্রিপশন বাংলাদেশ" />
-  <meta name="author" content="SM MEHMUD" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://sm-premium.vercel.app/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sm-premium.vercel.app/" />
-  <meta property="og:title" content="SM Premium 👑 - প্রিমিয়াম সার্ভিস মার্কেটপ্লেস" />
-  <meta property="og:description" content="বাংলাদেশের সেরা প্রিমিয়াম সার্ভিস মার্কেটপ্লেস।" />
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Store","name":"SM Premium","url":"https://sm-premium.vercel.app","founder":{"@type":"Person","name":"SM MEHMUD"},"areaServed":"Bangladesh"}
-  </script>
-  <link rel="stylesheet" href="css/app.css" />
+  <meta name="description" content="SM Premium - বাংলাদেশের সেরা প্রিমিয়াম সার্ভিস মার্কেটপ্লেস। YouTube, Netflix, Spotify, ChatGPT, Canva Pro সহ সব প্রিমিয়াম সার্ভিস।"/>
+  <meta name="keywords" content="SM Premium, SM MEHMUD, প্রিমিয়াম সার্ভিস, YouTube Premium, Netflix Bangladesh, Spotify Premium, ChatGPT Plus"/>
+  <meta name="author" content="SM MEHMUD"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="https://sm-premium.vercel.app/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://sm-premium.vercel.app/"/>
+  <meta property="og:title" content="SM Premium 👑 - প্রিমিয়াম সার্ভিস মার্কেটপ্লেস"/>
+  <meta property="og:description" content="বাংলাদেশের সেরা প্রিমিয়াম সার্ভিস মার্কেটপ্লেস।"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"SM Premium","url":"https://sm-premium.vercel.app","founder":{"@type":"Person","name":"SM MEHMUD"},"areaServed":"Bangladesh"}</script>
+  <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="app-header">
-  <div class="logo" onclick="navigateTo('home')">
+  <div class="logo" onclick="goHome()">
     <span class="logo-sm">SM</span><span class="logo-premium">PREMIUM</span><span class="logo-crown">👑</span>
   </div>
   <div class="header-right">
-    <button id="login-btn" class="login-btn" onclick="loginWithGoogle()">🔑 লগইন</button>
-    <img id="nav-profile-pic" class="nav-profile-pic" src="" alt="profile" onclick="navigateTo('profile')" style="display:none" />
+    <button id="login-btn" class="login-btn" onclick="loginWithGoogle()" style="display:none">🔑 লগইন</button>
+    <div id="user-info" class="user-info" style="display:none" onclick="navigateTo('profile')">
+      <img id="nav-pic" class="nav-pic" src="" alt=""/>
+      <span id="nav-wallet" class="nav-wallet">৳0</span>
+    </div>
   </div>
 </header>
 
@@ -37,53 +38,41 @@
 
   <!-- HOME -->
   <div class="page active" id="page-home">
-    <!-- HERO BANNER -->
-    <div class="hero-banner-new">
-      <div class="hero-orb orb1"></div>
-      <div class="hero-orb orb2"></div>
-      <div class="hero-orb orb3"></div>
-      <div class="hero-float-icons">
-        <span class="ficon" style="--d:0s;--x:10%;--y:20%">▶️</span>
-        <span class="ficon" style="--d:0.5s;--x:80%;--y:15%">🤖</span>
-        <span class="ficon" style="--d:1s;--x:70%;--y:70%">🎵</span>
-        <span class="ficon" style="--d:1.5s;--x:15%;--y:75%">🎬</span>
-        <span class="ficon" style="--d:2s;--x:50%;--y:10%">🎮</span>
-      </div>
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          বাংলাদেশের সেরা প্রিমিয়াম স্টোর
-        </div>
-        <h1 class="hero-title">
-          <span class="hero-title-sm">SM</span>
-          <span class="hero-title-premium">PREMIUM</span>
-          <span class="hero-crown">👑</span>
-        </h1>
-        <p class="hero-sub">YouTube • Netflix • Spotify • ChatGPT • Canva Pro</p>
-        <!-- REAL-TIME STATS -->
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="stat-num" id="stat-active-offers">-</span>
-            <span class="stat-label">অ্যাক্টিভ অফার</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <span class="stat-num" id="stat-total-users">-</span>
-            <span class="stat-label">মোট ইউজার</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <span class="stat-num" id="stat-daily-reports">-</span>
-            <span class="stat-label">আজকের রিপোর্ট</span>
-          </div>
-        </div>
-        <button class="hero-cta" onclick="navigateTo('offers')">সকল অফার দেখুন →</button>
-      </div>
+    <!-- Notice Banner -->
+    <div class="notice-banner" id="notice-banner" style="display:none">
+      <span id="notice-text"></span>
+      <button class="notice-close" onclick="this.parentElement.style.display='none'">✕</button>
     </div>
 
-    <div class="page-content" id="offers-home"><div class="loading-spinner"></div></div>
+    <!-- Hero / Wallet Banner -->
+    <div class="wallet-banner" onclick="navigateTo('wallet')">
+      <div class="wallet-banner-left">
+        <span class="wallet-banner-icon">💰</span>
+        <div>
+          <p class="wallet-banner-title">SM Wallet</p>
+          <p class="wallet-banner-sub">ওয়ালেটে টাকা যোগ করুন</p>
+        </div>
+      </div>
+      <span class="wallet-banner-arrow">→</span>
+    </div>
 
-    <!-- FOOTER -->
+    <!-- Hero Stats -->
+    <div class="hero-stats-bar">
+      <div class="hstat"><span id="hs-offers">-</span><small>অফার</small></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span id="hs-users">-</span><small>ইউজার</small></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span id="hs-orders">-</span><small>অর্ডার</small></div>
+    </div>
+
+    <!-- Latest Orders -->
+    <div class="section-title">📦 সর্বশেষ অর্ডার</div>
+    <div id="latest-orders" class="latest-orders"></div>
+
+    <!-- Offers -->
+    <div id="offers-home" class="offers-wrap"><div class="loading-spinner"></div></div>
+
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-logo">
         <span class="logo-sm">SM</span><span class="logo-premium">PREMIUM</span><span class="logo-crown">👑</span>
@@ -96,37 +85,43 @@
         <button class="footer-link" onclick="navigateTo('terms')">📄 Terms</button>
         <button class="footer-link" onclick="navigateTo('developer')">💻 Developer</button>
       </div>
-      <div class="footer-contact" id="footer-contact"></div>
       <p class="footer-copy" id="footer-copy">© 2025 SM Premium. All Rights Reserved.</p>
     </footer>
   </div>
 
-  <!-- OFFERS -->
-  <div class="page" id="page-offers">
-    <div class="page-header"><h2>🛍️ সকল অফার</h2></div>
-    <div class="page-content" id="offers-list"><div class="loading-spinner"></div></div>
-  </div>
-
-  <!-- OFFER DETAIL -->
-  <div class="page" id="page-offer-detail">
+  <!-- PRODUCT PAGE -->
+  <div class="page" id="page-product">
     <div class="page-header back-header">
-      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
     </div>
-    <div class="page-content" id="offer-detail-content"></div>
+    <div id="product-content"></div>
   </div>
 
-  <!-- NEWS -->
-  <div class="page" id="page-news">
-    <div class="page-header"><h2>🗞️ নিউজ ও আপডেট</h2></div>
-    <div class="page-content" id="news-list"><div class="loading-spinner"></div></div>
+  <!-- ORDER FORM -->
+  <div class="page" id="page-order">
+    <div class="page-header back-header">
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
+      <h2>📝 অর্ডার করুন</h2>
+    </div>
+    <div class="page-content" id="order-content"></div>
+  </div>
+
+  <!-- MY ORDERS -->
+  <div class="page" id="page-orders">
+    <div class="page-header"><h2>📦 আমার অর্ডার</h2></div>
+    <div class="page-content" id="orders-content"><div class="loading-spinner"></div></div>
+  </div>
+
+  <!-- WALLET / ADD MONEY -->
+  <div class="page" id="page-wallet">
+    <div class="page-header"><h2>💰 SM Wallet</h2></div>
+    <div class="page-content" id="wallet-content"><div class="loading-spinner"></div></div>
   </div>
 
   <!-- REPORT -->
   <div class="page" id="page-report">
     <div class="page-header"><h2>🗳️ রিপোর্ট করুন</h2></div>
-    <div class="page-content" id="report-page-content">
-      <!-- login gate অথবা form এখানে JS দিয়ে render হবে -->
-    </div>
+    <div class="page-content" id="report-content"></div>
   </div>
 
   <!-- PROFILE -->
@@ -135,19 +130,25 @@
     <div class="page-content" id="profile-content"><div class="loading-spinner"></div></div>
   </div>
 
+  <!-- NEWS -->
+  <div class="page" id="page-news">
+    <div class="page-header"><h2>🗞️ নিউজ</h2></div>
+    <div class="page-content" id="news-content"><div class="loading-spinner"></div></div>
+  </div>
+
   <!-- DEVELOPER -->
   <div class="page" id="page-developer">
     <div class="page-header back-header">
-      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
-      <h2>💻 Developer Info</h2>
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
+      <h2>💻 Developer</h2>
     </div>
     <div class="page-content" id="developer-content"><div class="loading-spinner"></div></div>
   </div>
 
-  <!-- PRIVACY POLICY -->
+  <!-- PRIVACY -->
   <div class="page" id="page-privacy">
     <div class="page-header back-header">
-      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
       <h2>🔒 Privacy Policy</h2>
     </div>
     <div class="page-content policy-content" id="privacy-content"><div class="loading-spinner"></div></div>
@@ -156,7 +157,7 @@
   <!-- FAQ -->
   <div class="page" id="page-faq">
     <div class="page-header back-header">
-      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
       <h2>❓ FAQ</h2>
     </div>
     <div class="page-content policy-content" id="faq-content"><div class="loading-spinner"></div></div>
@@ -165,7 +166,7 @@
   <!-- TERMS -->
   <div class="page" id="page-terms">
     <div class="page-header back-header">
-      <button class="back-btn" onclick="history.back()">← ফিরে যান</button>
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
       <h2>📄 Terms of Service</h2>
     </div>
     <div class="page-content policy-content" id="terms-content"><div class="loading-spinner"></div></div>
@@ -178,43 +179,37 @@
   <button class="nav-btn active" data-page="home" onclick="navigateTo('home')">
     <span class="nav-icon">🏠</span><span class="nav-label">হোম</span>
   </button>
-  <button class="nav-btn" data-page="offers" onclick="navigateTo('offers')">
-    <span class="nav-icon">🛍️</span><span class="nav-label">অফার</span>
+  <button class="nav-btn" data-page="wallet" onclick="navigateTo('wallet')">
+    <span class="nav-icon">➕</span><span class="nav-label">Add Money</span>
+  </button>
+  <button class="nav-btn" data-page="orders" onclick="navigateTo('orders')">
+    <span class="nav-icon">📦</span><span class="nav-label">My Orders</span>
   </button>
   <button class="nav-btn" data-page="report" onclick="navigateTo('report')">
     <span class="nav-icon">🗳️</span><span class="nav-label">রিপোর্ট</span>
   </button>
-  <button class="nav-btn" data-page="news" onclick="navigateTo('news')">
-    <span class="nav-icon">🗞️</span><span class="nav-label">নিউজ</span>
-  </button>
   <button class="nav-btn" data-page="profile" onclick="navigateTo('profile')">
-    <span class="nav-icon">👤</span><span class="nav-label">প্রোফাইল</span>
+    <span class="nav-icon">👤</span><span class="nav-label">Profile</span>
   </button>
 </nav>
 
-<!-- CONTACT MODAL -->
-<div class="modal-overlay" id="contact-modal">
+<!-- MODALS -->
+<div class="modal-overlay" id="login-modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeContactModal()">✕</button>
-    <div class="modal-title">📲 যোগাযোগ</div>
-    <p class="modal-sub" id="contact-offer-name"></p>
-    <p class="modal-desc">কার সাথে যোগাযোগ করবেন?</p>
-    <button class="contact-person-btn glow-btn" onclick="showContactLinks()">👑 SM MEHMUD</button>
+    <div class="modal-title">🔐 লগইন প্রয়োজন</div>
+    <p class="modal-desc">এই কাজটি করতে আগে লগইন করুন</p>
+    <button class="glow-btn" onclick="closeModal('login-modal');loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
+    <button class="cancel-btn" onclick="closeModal('login-modal')">বাতিল</button>
   </div>
 </div>
 
-<!-- LINKS MODAL -->
-<div class="modal-overlay" id="links-modal"></div>
-
-<!-- TOAST -->
 <div id="toast" class="toast"></div>
 
-<!-- FIREBASE + APP LOGIC -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getDatabase, ref, onValue, push, set, update, remove, get }
+import { getDatabase, ref, onValue, push, set, update, remove, get, query, orderByChild, limitToLast }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const app = initializeApp({
@@ -227,44 +222,68 @@ const app = initializeApp({
   appId: "1:1043748679307:web:dd62fa7b134542f8792e8e"
 });
 const auth = getAuth(app);
-const db = getDatabase(app);
+const db   = getDatabase(app);
 const provider = new GoogleAuthProvider();
 
 let currentUser = null;
-let contactInfo = {};
-let allOffers = [];
-const pageStack = ['home'];
+let allOffers   = [];
+let userBalance = 0;
+let currentProduct = null;
+let currentPackage = null;
 
-// ── Back Button ──
-history.pushState(null, '', location.href);
-window.addEventListener('popstate', (e) => {
-  e.preventDefault();
-  if (pageStack.length > 1) {
-    pageStack.pop();
-    navigateTo(pageStack[pageStack.length - 1], false);
-  } else {
-    history.pushState(null, '', location.href);
+// ── Router (hash-based) ──
+function parseHash() {
+  const hash = location.hash.slice(1);
+  if (!hash) return { page: 'home', params: {} };
+  const [page, q] = hash.split('?');
+  const params = {};
+  if (q) q.split('&').forEach(p => { const [k,v]=p.split('='); params[k]=decodeURIComponent(v||''); });
+  return { page: page||'home', params };
+}
+
+window.navigateTo = function(page, params={}, push=true) {
+  let hash = page;
+  if (Object.keys(params).length) {
+    hash += '?' + Object.entries(params).map(([k,v])=>`${k}=${encodeURIComponent(v)}`).join('&');
   }
+  if (push) location.hash = hash;
+  else renderPage(page, params);
+};
+
+window.goBack = function() { history.back(); };
+window.goHome = function() { navigateTo('home'); };
+
+window.addEventListener('hashchange', () => {
+  const {page, params} = parseHash();
+  renderPage(page, params);
 });
 
-// ── Router ──
-window.navigateTo = function(page, push = true) {
-  if (push) { pageStack.push(page); history.pushState({page}, '', location.href); }
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  const target = document.getElementById('page-' + page);
-  if (target) { target.classList.add('active'); target.scrollTop = 0; }
+function renderPage(page, params={}) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  const target = document.getElementById('page-'+page);
+  if (target) { target.classList.add('active'); target.scrollTop=0; }
+  else { document.getElementById('page-home').classList.add('active'); }
   const navBtn = document.querySelector(`.nav-btn[data-page="${page}"]`);
   if (navBtn) navBtn.classList.add('active');
-  if (page === 'home' || page === 'offers') loadOffers();
-  if (page === 'news') loadNews();
-  if (page === 'profile') loadProfile();
-  if (page === 'developer') loadDeveloper();
-  if (page === 'report') loadReportPage();
-  if (page === 'privacy') loadPolicy('privacy');
-  if (page === 'faq') loadPolicy('faq');
-  if (page === 'terms') loadPolicy('terms');
-};
+
+  if (page==='home')      { loadHomeData(); }
+  if (page==='product')   { loadProductPage(params.slug); }
+  if (page==='orders')    { loadMyOrders(); }
+  if (page==='wallet')    { loadWalletPage(); }
+  if (page==='report')    { loadReportPage(); }
+  if (page==='profile')   { loadProfile(); }
+  if (page==='news')      { loadNews(); }
+  if (page==='developer') { loadDeveloper(); }
+  if (page==='privacy')   { loadPolicy('privacy'); }
+  if (page==='faq')       { loadPolicy('faq'); }
+  if (page==='terms')     { loadPolicy('terms'); }
+}
+
+// ── Init ──
+const initHash = parseHash();
+// Check if URL is /product/:slug (from vercel rewrite)
+const pathSlug = location.pathname.match(/^\/product\/(.+)$/)?.[1];
 
 // ── Auth ──
 window.loginWithGoogle = async () => {
@@ -274,329 +293,526 @@ window.loginWithGoogle = async () => {
 
 onAuthStateChanged(auth, async (user) => {
   currentUser = user;
-  document.getElementById('login-btn').style.display = user ? 'none' : 'flex';
-  const pic = document.getElementById('nav-profile-pic');
+  updateAuthUI(user);
   if (user) {
-    pic.src = user.photoURL || 'assets/default-avatar.svg';
-    pic.style.display = 'block';
     const snap = await get(ref(db, `users/${user.uid}`));
     if (!snap.exists()) {
       await set(ref(db, `users/${user.uid}`), {
         displayName: user.displayName, email: user.email,
-        photoURL: user.photoURL, createdAt: Date.now()
+        photoURL: user.photoURL, wallet: 0, createdAt: Date.now()
       });
     }
-  } else {
-    pic.style.display = 'none';
+    loadUserWallet();
   }
-  onValue(ref(db, 'settings/contact'), s => { contactInfo = s.val() || {}; });
-  loadOffers();
+  // Initial render
+  if (pathSlug) {
+    renderPage('product', { slug: pathSlug });
+  } else {
+    renderPage(initHash.page, initHash.params);
+  }
+  loadSettings();
   loadHeroStats();
-  loadFooter();
+  loadLatestOrders();
 });
 
-// ── Hero Real-time Stats ──
-function loadHeroStats() {
-  onValue(ref(db, 'offers'), snap => {
-    const data = snap.val() || {};
-    const active = Object.values(data).filter(o => !o.stockOut).length;
-    const el = document.getElementById('stat-active-offers');
-    if (el) el.textContent = active + '+';
-  });
-  onValue(ref(db, 'users'), snap => {
-    const el = document.getElementById('stat-total-users');
-    if (el) el.textContent = snap.exists() ? Object.keys(snap.val()).length + '+' : '0';
-  });
-  onValue(ref(db, 'reports'), snap => {
-    const data = snap.val() || {};
-    const today = new Date(); today.setHours(0,0,0,0);
-    const daily = Object.values(data).filter(r => r.createdAt >= today.getTime()).length;
-    const el = document.getElementById('stat-daily-reports');
-    if (el) el.textContent = daily;
+function updateAuthUI(user) {
+  const loginBtn = document.getElementById('login-btn');
+  const userInfo = document.getElementById('user-info');
+  if (user) {
+    loginBtn.style.display = 'none';
+    userInfo.style.display = 'flex';
+    document.getElementById('nav-pic').src = user.photoURL || 'assets/default-avatar.svg';
+  } else {
+    loginBtn.style.display = 'flex';
+    userInfo.style.display = 'none';
+  }
+}
+
+function loadUserWallet() {
+  if (!currentUser) return;
+  onValue(ref(db, `users/${currentUser.uid}/wallet`), snap => {
+    userBalance = snap.val() || 0;
+    document.getElementById('nav-wallet').textContent = '৳'+userBalance;
   });
 }
 
-// ── Footer ──
-function loadFooter() {
+// ── Settings ──
+function loadSettings() {
   onValue(ref(db, 'settings/footer'), snap => {
     const f = snap.val() || {};
-    const tagline = document.getElementById('footer-tagline');
-    if (tagline && f.tagline) tagline.textContent = f.tagline;
+    const el = document.getElementById('footer-tagline');
+    if (el && f.tagline) el.textContent = f.tagline;
     const copy = document.getElementById('footer-copy');
     if (copy) copy.textContent = f.copyright || '© 2025 SM Premium. All Rights Reserved.';
     const social = document.getElementById('footer-social');
-    if (social) {
-      social.innerHTML =
-        (f.telegram ? `<a href="${f.telegram}" class="footer-social-btn tg" target="_blank">✈️</a>` : '') +
-        (f.whatsapp ? `<a href="${f.whatsapp}" class="footer-social-btn wa" target="_blank">💬</a>` : '') +
-        (f.facebook ? `<a href="${f.facebook}" class="footer-social-btn fb" target="_blank">👤</a>` : '') +
-        (f.youtube  ? `<a href="${f.youtube}"  class="footer-social-btn yt" target="_blank">▶️</a>` : '');
-    }
-    const contact = document.getElementById('footer-contact');
-    if (contact && f.contactText) {
-      contact.innerHTML = `<p class="footer-contact-text">${f.contactText}</p>`;
+    if (social) social.innerHTML =
+      (f.telegram?`<a href="${f.telegram}" class="fsoc tg" target="_blank">✈️</a>`:'')+
+      (f.whatsapp?`<a href="${f.whatsapp}" class="fsoc wa" target="_blank">💬</a>`:'')+
+      (f.facebook?`<a href="${f.facebook}" class="fsoc fb" target="_blank">👤</a>`:'')+
+      (f.youtube ?`<a href="${f.youtube}"  class="fsoc yt" target="_blank">▶️</a>`:'');
+  });
+  onValue(ref(db, 'settings/notice'), snap => {
+    const n = snap.val() || {};
+    const banner = document.getElementById('notice-banner');
+    const text   = document.getElementById('notice-text');
+    if (banner && n.text && n.active) {
+      text.textContent = n.text;
+      banner.style.display = 'flex';
     }
   });
 }
 
-// ── Policy Pages ──
-function loadPolicy(type) {
-  const el = document.getElementById(type + '-content');
-  if (!el) return;
-  onValue(ref(db, 'settings/pages/' + type), snap => {
-    const text = snap.val() || '';
-    el.innerHTML = text
-      ? `<div class="policy-body">${text.replace(/\n/g, '<br/>')}</div>`
-      : '<p class="empty">এখনো যোগ করা হয়নি</p>';
-  }, {onlyOnce: true});
+// ── Hero Stats ──
+function loadHeroStats() {
+  onValue(ref(db,'offers'), s => {
+    const d = s.val()||{};
+    const active = Object.values(d).filter(o=>!o.stockOut).length;
+    const el = document.getElementById('hs-offers');
+    if (el) el.textContent = active+'+';
+  });
+  onValue(ref(db,'users'), s => {
+    const el = document.getElementById('hs-users');
+    if (el) el.textContent = s.exists()?Object.keys(s.val()).length+'+':'0';
+  });
+  onValue(ref(db,'orders'), s => {
+    const el = document.getElementById('hs-orders');
+    if (el) el.textContent = s.exists()?Object.keys(s.val()).length+'+':'0';
+  });
 }
 
-// ── Offers ──
-function loadOffers() {
-  onValue(ref(db, 'offers'), snap => {
-    const data = snap.val() || {};
-    allOffers = Object.entries(data).map(([id,o]) => ({id,...o}));
-    renderOffers('offers-home');
-    renderOffers('offers-list');
-  }, {onlyOnce: true});
+// ── Latest Orders ──
+function loadLatestOrders() {
+  onValue(ref(db,'orders'), snap => {
+    const data = snap.val()||{};
+    const orders = Object.values(data)
+      .sort((a,b)=>(b.createdAt||0)-(a.createdAt||0))
+      .slice(0,5);
+    const el = document.getElementById('latest-orders');
+    if (!el) return;
+    el.innerHTML = orders.length ? orders.map(o=>`
+      <div class="latest-order-item">
+        <div class="lo-avatar">${(o.userName||'U').charAt(0).toUpperCase()}</div>
+        <div class="lo-info">
+          <p class="lo-name">${o.userName||'ব্যবহারকারী'}</p>
+          <p class="lo-pkg">${o.productName||''} - ${o.packageName||''} - ৳${o.amount||0}</p>
+        </div>
+        <span class="lo-status ${o.status}">${statusLabel(o.status)}</span>
+      </div>`).join('') : '<p class="empty">কোনো অর্ডার নেই</p>';
+  }, {onlyOnce:true});
 }
 
-function renderOffers(containerId) {
-  const el = document.getElementById(containerId);
+function statusLabel(s) {
+  if (s==='completed') return 'COMPLETED';
+  if (s==='processing') return 'PROCESSING';
+  if (s==='cancelled') return 'CANCELLED';
+  return 'PENDING';
+}
+
+// ── Home Offers ──
+function loadHomeData() {
+  onValue(ref(db,'offers'), snap => {
+    const data = snap.val()||{};
+    allOffers = Object.entries(data).map(([id,o])=>({id,...o}));
+    renderHomeOffers();
+  }, {onlyOnce:true});
+}
+
+function renderHomeOffers() {
+  const el = document.getElementById('offers-home');
   if (!el) return;
-  const cats = [...new Set(allOffers.map(o => o.category).filter(Boolean))];
+  const cats = [...new Set(allOffers.map(o=>o.category).filter(Boolean))];
   let html = '';
   cats.forEach(cat => {
-    const items = allOffers.filter(o => o.category === cat);
+    const items = allOffers.filter(o=>o.category===cat);
     if (!items.length) return;
     html += `<div class="category-section">
       <h2 class="category-title">✦ ${cat}</h2>
       <div class="offers-grid">${items.map(offerCard).join('')}</div>
     </div>`;
   });
-  const noCat = allOffers.filter(o => !o.category);
-  if (noCat.length) {
-    html += `<div class="category-section">
-      <h2 class="category-title">✦ অন্যান্য</h2>
-      <div class="offers-grid">${noCat.map(offerCard).join('')}</div>
-    </div>`;
-  }
+  const noCat = allOffers.filter(o=>!o.category);
+  if (noCat.length) html += `<div class="category-section">
+    <h2 class="category-title">✦ অন্যান্য</h2>
+    <div class="offers-grid">${noCat.map(offerCard).join('')}</div>
+  </div>`;
   el.innerHTML = html || '<p class="empty">কোনো অফার নেই</p>';
 }
 
-// ── Offer Card (badge fix: discount উপরে, stock out নিচে) ──
 function offerCard(o) {
-  return `<div class="offer-card" onclick="openOffer('${o.id}')">
+  const slug = o.slug || o.id;
+  return `<div class="offer-card" onclick="navigateTo('product',{slug:'${slug}'})">
     <div class="offer-img-wrap">
-      ${o.pic
-        ? `<img src="${o.pic}" alt="${o.name}" loading="lazy"/>`
-        : `<div class="offer-img-placeholder">${(o.name||'?').charAt(0)}</div>`}
-      ${o.discount ? `<span class="badge discount">-${o.discount}%</span>` : ''}
-      ${o.stockOut ? '<span class="badge stock-out">STOCK OUT</span>' : ''}
+      ${o.pic?`<img src="${o.pic}" alt="${o.name}" loading="lazy"/>`:`<div class="offer-img-placeholder">${(o.name||'?').charAt(0)}</div>`}
+      ${o.discount?`<span class="badge discount">-${o.discount}%</span>`:''}
+      ${o.stockOut?'<span class="badge stock-out">STOCK OUT</span>':''}
     </div>
     <p class="offer-name">${o.name||''}</p>
   </div>`;
 }
 
-// ── Offer Detail ──
-window.openOffer = function(id) {
-  const o = allOffers.find(x => x.id === id);
-  if (!o) return;
-  let price = '';
-  if (o.price && o.discount) {
-    const d = Math.round(o.price * (1 - o.discount/100));
-    price = `<span class="old-price">৳${o.price}</span> <span class="new-price">৳${d}</span>`;
-  } else if (o.price) {
-    price = `<span class="new-price">৳${o.price}</span>`;
-  }
-  document.getElementById('offer-detail-content').innerHTML = `
-    <div class="offer-detail-hero">
-      ${o.pic ? `<img src="${o.pic}" class="detail-img"/>` : `<div class="detail-img-placeholder">${(o.name||'?').charAt(0)}</div>`}
-    </div>
-    <div class="offer-detail-info">
-      <h1 class="detail-title">${o.name}</h1>
-      ${price ? `<div class="detail-price">${price}</div>` : ''}
-      ${o.description ? `<p class="detail-desc">${o.description}</p>` : ''}
-      ${o.stockOut
-        ? '<div class="stock-out-banner">⚠️ স্টক আউট</div>'
-        : `<button class="contact-btn glow-btn" onclick="requireLoginForContact('${o.id}','${o.name}')">📲 Contact for Buy</button>`}
-    </div>`;
-  navigateTo('offer-detail');
-};
-
-// ── Login Gate for Contact ──
-window.requireLoginForContact = function(id, name) {
-  if (!currentUser) {
-    showLoginGateModal();
-    return;
-  }
-  showContactModal(id, name);
-};
-
-function showLoginGateModal() {
-  const modal = document.getElementById('links-modal');
-  modal.innerHTML = `<div class="links-modal-box">
-    <button class="modal-close" onclick="closeContactModal()">✕</button>
-    <div class="links-modal-title">🔐 লগইন প্রয়োজন</div>
-    <p class="links-modal-sub" style="color:var(--text2);font-size:13px;margin-bottom:20px;">অর্ডার করতে আগে লগইন করুন</p>
-    <button class="glow-btn" onclick="closeContactModal();loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
-  </div>`;
-  modal.classList.add('active');
-}
-
-// ── Contact Modal ──
-window.showContactModal = function(id, name) {
-  window._offerName = name;
-  document.getElementById('contact-offer-name').textContent = name;
-  document.getElementById('contact-modal').classList.add('active');
-};
-window.closeContactModal = function() {
-  document.getElementById('contact-modal').classList.remove('active');
-  document.getElementById('links-modal').classList.remove('active');
-};
-window.showContactLinks = function() {
-  document.getElementById('contact-modal').classList.remove('active');
-  const c = contactInfo;
-  const msg = encodeURIComponent(`আসসালামু আলাইকুম, আমি "${window._offerName}" নিতে চাই। দয়া করে বিস্তারিত জানান।`);
-  const tg = c.telegram ? c.telegram.replace('https://t.me/','') : '';
-  const wa = c.whatsapp ? c.whatsapp.replace(/\D/g,'') : '';
-  const modal = document.getElementById('links-modal');
-  modal.innerHTML = `<div class="links-modal-box">
-    <button class="modal-close" onclick="closeContactModal()">✕</button>
-    <div class="links-modal-title">📲 যোগাযোগ করুন</div>
-    <p class="links-modal-sub">SM MEHMUD</p>
-    <div class="contact-links">
-      ${tg ? `<a class="contact-link tg" href="https://t.me/${tg}?text=${msg}" target="_blank">✈️ Telegram</a>` : ''}
-      ${wa ? `<a class="contact-link wa" href="https://wa.me/${wa}?text=${msg}" target="_blank">💬 WhatsApp</a>` : ''}
-      ${c.facebook ? `<a class="contact-link fb" href="${c.facebook}" target="_blank">👤 Facebook</a>` : ''}
-    </div>
-  </div>`;
-  modal.classList.add('active');
-};
-
-// ── News ──
-function loadNews() {
-  onValue(ref(db, 'news'), snap => {
-    const data = snap.val() || {};
-    const posts = Object.entries(data).map(([id,n])=>({id,...n}))
-      .sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
-    const el = document.getElementById('news-list');
-    if (!el) return;
-    el.innerHTML = posts.length ? posts.map(newsCard).join('') : '<p class="empty">কোনো নিউজ নেই</p>';
-  }, {onlyOnce: true});
-}
-
-function newsCard(p) {
-  const date = p.createdAt ? new Date(p.createdAt).toLocaleDateString('bn-BD') : '';
-  return `<div class="news-card">
-    <div class="news-header">
-      <span class="news-badge">📢 আপডেট</span>
-      <span class="news-date">${date}</span>
-    </div>
-    <p class="news-text">${p.text||''}</p>
-    ${p.imageUrl ? `<img src="${p.imageUrl}" class="news-img" loading="lazy"/>` : ''}
-    ${p.link ? `<a href="${p.link}" class="news-link" target="_blank">🔗 বিস্তারিত দেখুন</a>` : ''}
-    <div class="news-actions">
-      <button class="react-btn" onclick="toggleReact('${p.id}')">❤️ <span id="rc-${p.id}">${Object.keys(p.reactions||{}).length}</span></button>
-      <button class="comment-btn" onclick="toggleComments('${p.id}')">💬 <span id="cc-${p.id}">${Object.keys(p.comments||{}).length}</span></button>
-    </div>
-    <div id="cmts-${p.id}" style="display:none">
-      <div id="clist-${p.id}"></div>
-      ${currentUser
-        ? `<div class="comment-input-row">
-            <input class="comment-input" id="cinput-${p.id}" placeholder="মন্তব্য লিখুন..."/>
-            <button class="comment-send" onclick="postComment('${p.id}')">➤</button>
-           </div>`
-        : '<p class="login-prompt">মন্তব্য করতে লগইন করুন</p>'}
-    </div>
-  </div>`;
-}
-
-window.toggleReact = async function(id) {
-  if (!currentUser) { showToast('রিয়েক্ট করতে লগইন করুন'); return; }
-  const r = ref(db, `news/${id}/reactions/${currentUser.uid}`);
-  const s = await get(r);
-  s.exists() ? await remove(r) : await set(r, true);
-  const cs = await get(ref(db, `news/${id}/reactions`));
-  const el = document.getElementById(`rc-${id}`);
-  if (el) el.textContent = cs.exists() ? Object.keys(cs.val()).length : 0;
-};
-
-window.toggleComments = function(id) {
-  const el = document.getElementById(`cmts-${id}`);
+// ── Product Page ──
+async function loadProductPage(slug) {
+  const el = document.getElementById('product-content');
   if (!el) return;
-  const open = el.style.display !== 'none';
-  el.style.display = open ? 'none' : 'block';
-  if (!open) loadComments(id);
-};
+  el.innerHTML = '<div class="loading-spinner"></div>';
 
-function loadComments(id) {
-  onValue(ref(db, `news/${id}/comments`), snap => {
-    const el = document.getElementById(`clist-${id}`);
-    if (!el) return;
-    const items = Object.values(snap.val() || {});
-    el.innerHTML = items.length
-      ? items.map(c=>`<div class="comment-item"><span class="comment-name">${c.name}</span><span class="comment-text">${c.text}</span></div>`).join('')
-      : '<p class="empty-small">কোনো মন্তব্য নেই</p>';
-  }, {onlyOnce: true});
+  // Find offer by slug or id
+  let o = allOffers.find(x=>(x.slug||x.id)===slug);
+  if (!o) {
+    const snap = await get(ref(db,'offers'));
+    const data = snap.val()||{};
+    const found = Object.entries(data).find(([id,x])=>(x.slug||id)===slug);
+    if (!found) { el.innerHTML='<p class="empty">অফার পাওয়া যায়নি</p>'; return; }
+    o = {id:found[0],...found[1]};
+  }
+  currentProduct = o;
+
+  const packages = o.packages ? Object.entries(o.packages).map(([id,p])=>({id,...p})) : [];
+
+  el.innerHTML = `
+    <div class="product-hero">
+      ${o.pic?`<img src="${o.pic}" class="product-hero-img" alt="${o.name}"/>`:`<div class="product-hero-placeholder">${(o.name||'?').charAt(0)}</div>`}
+      <div class="product-hero-overlay">
+        <h1 class="product-title">${o.name}</h1>
+        <p class="product-sub">${o.category||''}</p>
+      </div>
+    </div>
+    ${o.description?`<div class="product-desc-box"><p>${o.description}</p></div>`:''}
+    ${o.stockOut?'<div class="stock-out-banner">⚠️ স্টক আউট — এই অফারটি বর্তমানে পাওয়া যাচ্ছে না</div>':`
+    <div class="packages-section">
+      <h3 class="packages-title">📦 প্যাকেজ সিলেক্ট করুন</h3>
+      ${packages.length ? packages.map(p=>`
+        <div class="package-item ${p.stockOut?'pkg-out':''}" onclick="${p.stockOut?'':'selectPackage(\''+p.id+'\',\''+o.id+'\')'}">
+          <div class="pkg-left">
+            <div class="pkg-radio" id="radio-${p.id}"></div>
+            <div>
+              <p class="pkg-name">${p.name}</p>
+              ${p.note?`<p class="pkg-note">${p.note}</p>`:''}
+            </div>
+          </div>
+          <div class="pkg-right">
+            ${p.originalPrice&&p.originalPrice!==p.price?`<span class="pkg-old">৳${p.originalPrice}</span>`:''}
+            <span class="pkg-price">৳${p.price}</span>
+            ${p.stockOut?'<span class="pkg-out-label">OUT</span>':''}
+          </div>
+        </div>`).join('') : '<p class="empty-small">কোনো প্যাকেজ নেই, Admin থেকে যোগ করুন</p>'}
+    </div>
+    <div id="order-btn-wrap" style="padding:0 16px 16px;display:none;">
+      <button class="glow-btn" onclick="proceedToOrder()">📝 অর্ডার করুন</button>
+    </div>`}`;
 }
 
-window.postComment = async function(id) {
-  if (!currentUser) return;
-  const input = document.getElementById(`cinput-${id}`);
-  const text = input?.value.trim();
-  if (!text) return;
-  await push(ref(db, `news/${id}/comments`), {
-    text, name: currentUser.displayName||'ব্যবহারকারী',
-    userId: currentUser.uid, createdAt: Date.now()
+window.selectPackage = function(pkgId, offerId) {
+  const o = currentProduct;
+  if (!o || !o.packages) return;
+  const pkg = o.packages[pkgId];
+  if (!pkg) return;
+  currentPackage = {id: pkgId, ...pkg};
+  // Update radio UI
+  document.querySelectorAll('.pkg-radio').forEach(r=>r.classList.remove('selected'));
+  document.getElementById('radio-'+pkgId)?.classList.add('selected');
+  document.querySelectorAll('.package-item').forEach(i=>i.classList.remove('pkg-selected'));
+  document.querySelector(`[onclick*="${pkgId}"]`)?.classList.add('pkg-selected');
+  // Show order button
+  const wrap = document.getElementById('order-btn-wrap');
+  if (wrap) wrap.style.display = 'block';
+};
+
+window.proceedToOrder = function() {
+  if (!currentUser) { openModal('login-modal'); return; }
+  if (!currentPackage) { showToast('প্যাকেজ সিলেক্ট করুন'); return; }
+  renderOrderForm();
+  navigateTo('order');
+};
+
+function renderOrderForm() {
+  const el = document.getElementById('order-content');
+  if (!el || !currentProduct || !currentPackage) return;
+  const bkash = ''; // Admin panel থেকে load হবে
+  const amount = currentPackage.price;
+
+  el.innerHTML = `
+    <div class="order-summary-card">
+      <h3 class="order-sum-title">📋 অর্ডার সারসংক্ষেপ</h3>
+      <div class="order-sum-row"><span>পণ্য</span><span>${currentProduct.name}</span></div>
+      <div class="order-sum-row"><span>প্যাকেজ</span><span>${currentPackage.name}</span></div>
+      <div class="order-sum-row total"><span>মোট</span><span class="order-amount">৳${amount}</span></div>
+    </div>
+
+    <div class="payment-method-card">
+      <h3 class="pm-title">💰 পেমেন্ট পদ্ধতি</h3>
+      <div class="pm-tabs">
+        <button class="pm-tab active" onclick="switchPayment('wallet',this)">💼 Wallet (৳${userBalance})</button>
+        <button class="pm-tab" onclick="switchPayment('bkash',this)">📱 bKash</button>
+      </div>
+
+      <!-- Wallet Payment -->
+      <div id="pay-wallet" class="pay-section">
+        ${userBalance >= amount ? `
+          <div class="wallet-pay-info">
+            <p>✅ আপনার ওয়ালেটে পর্যাপ্ত ব্যালেন্স আছে</p>
+            <p class="wallet-balance-show">ব্যালেন্স: ৳${userBalance}</p>
+          </div>` : `
+          <div class="wallet-low">
+            <p>⚠️ ওয়ালেটে পর্যাপ্ত ব্যালেন্স নেই</p>
+            <p>প্রয়োজন: ৳${amount} | আপনার: ৳${userBalance}</p>
+            <button class="glow-btn sm-btn" onclick="navigateTo('wallet')">💰 Add Money</button>
+          </div>`}
+      </div>
+
+      <!-- bKash Payment -->
+      <div id="pay-bkash" class="pay-section" style="display:none">
+        <div class="bkash-info-card" id="bkash-info">
+          <div class="loading-spinner sm"></div>
+        </div>
+        <div class="form-group">
+          <label>📱 আপনার bKash নম্বর</label>
+          <input type="tel" id="sender-number" placeholder="01XXXXXXXXX" class="form-input"/>
+        </div>
+        <div class="form-group">
+          <label>🔢 Transaction ID (TrxID)</label>
+          <input type="text" id="trx-id" placeholder="TrxID লিখুন" class="form-input"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Info -->
+    <div class="user-info-card">
+      <h3 class="ui-title">👤 আপনার তথ্য</h3>
+      ${renderUserInfoFields(currentProduct)}
+    </div>
+
+    <div style="padding:0 16px 80px;">
+      <button class="glow-btn" onclick="submitOrder()">✅ অর্ডার সাবমিট করুন</button>
+    </div>`;
+
+  // Load bKash number from settings
+  get(ref(db,'settings/bkash')).then(snap=>{
+    const b = snap.val()||{};
+    const infoEl = document.getElementById('bkash-info');
+    if (infoEl) infoEl.innerHTML = `
+      <p class="bkash-step">১. নিচের নম্বরে <strong>Send Money</strong> করুন:</p>
+      <div class="bkash-number">${b.number||'01XXXXXXXXX'}</div>
+      <p class="bkash-step">২. TrxID এবং নম্বর নিচে দিন</p>
+      ${b.note?`<p class="bkash-note">⚠️ ${b.note}</p>`:''}`;
   });
-  input.value = '';
-  loadComments(id);
+}
+
+function renderUserInfoFields(product) {
+  const fields = product.orderFields || ['name','phone'];
+  return fields.map(f => {
+    const labels = {name:'👤 নাম',phone:'📱 ফোন নম্বর',uid:'🆔 Game UID',email:'📧 ইমেইল',username:'👤 Username',server:'🌐 Server'};
+    const types  = {phone:'tel',email:'email'};
+    return `<div class="form-group">
+      <label>${labels[f]||f}</label>
+      <input type="${types[f]||'text'}" id="field-${f}" placeholder="${labels[f]||f} লিখুন" class="form-input"/>
+    </div>`;
+  }).join('');
+}
+
+window.switchPayment = function(type, btn) {
+  document.querySelectorAll('.pm-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('pay-wallet').style.display = type==='wallet'?'block':'none';
+  document.getElementById('pay-bkash').style.display  = type==='bkash' ?'block':'none';
 };
 
-// ── Report Page (Login Gate) ──
-function loadReportPage() {
-  const el = document.getElementById('report-page-content');
+window.submitOrder = async function() {
+  if (!currentUser || !currentProduct || !currentPackage) return;
+  const activePay = document.querySelector('.pm-tab.active');
+  const payType = activePay?.textContent.includes('Wallet') ? 'wallet' : 'bkash';
+
+  // Collect user info
+  const fields = currentProduct.orderFields || ['name','phone'];
+  const userInfoData = {};
+  let valid = true;
+  fields.forEach(f => {
+    const val = document.getElementById('field-'+f)?.value.trim();
+    if (!val) { showToast(f+' প্রয়োজন'); valid=false; }
+    userInfoData[f] = val;
+  });
+  if (!valid) return;
+
+  const amount = parseFloat(currentPackage.price);
+
+  if (payType==='wallet') {
+    if (userBalance < amount) { showToast('ওয়ালেটে পর্যাপ্ত ব্যালেন্স নেই'); return; }
+    // Deduct from wallet
+    await update(ref(db,`users/${currentUser.uid}`), { wallet: userBalance - amount });
+  } else {
+    const senderNum = document.getElementById('sender-number')?.value.trim();
+    const trxId = document.getElementById('trx-id')?.value.trim();
+    if (!senderNum || !trxId) { showToast('bKash নম্বর ও TrxID দিন'); return; }
+    userInfoData.senderNumber = senderNum;
+    userInfoData.trxId = trxId;
+  }
+
+  const orderData = {
+    userId:      currentUser.uid,
+    userName:    currentUser.displayName||'',
+    userEmail:   currentUser.email||'',
+    productId:   currentProduct.id,
+    productName: currentProduct.name,
+    packageId:   currentPackage.id,
+    packageName: currentPackage.name,
+    amount,
+    paymentType: payType,
+    userInfo:    userInfoData,
+    status:      'pending',
+    createdAt:   Date.now()
+  };
+
+  await push(ref(db,'orders'), orderData);
+  showToast('অর্ডার সফলভাবে সাবমিট হয়েছে ✅');
+  setTimeout(()=>navigateTo('orders'), 1500);
+};
+
+// ── My Orders ──
+function loadMyOrders() {
+  const el = document.getElementById('orders-content');
   if (!el) return;
   if (!currentUser) {
-    el.innerHTML = `<div class="login-wall">
-      <div class="login-wall-icon">🗳️</div>
-      <p>রিপোর্ট করতে আগে লগইন করুন</p>
-      <button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
-    </div>`;
+    el.innerHTML=`<div class="login-wall"><div class="login-wall-icon">📦</div><p>অর্ডার দেখতে লগইন করুন</p><button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button></div>`;
     return;
   }
-  el.innerHTML = `<div class="report-form">
-    <div class="form-group">
-      <label>📧 ইমেইল</label>
-      <input type="email" id="report-email" placeholder="আপনার ইমেইল" class="form-input" value="${currentUser.email}" />
-    </div>
-    <div class="form-group">
-      <label>👤 নাম</label>
-      <input type="text" id="report-name" placeholder="আপনার নাম" class="form-input" value="${currentUser.displayName||''}" />
-    </div>
-    <div class="form-group">
-      <label>📍 জেলা</label>
-      <input type="text" id="report-district" placeholder="আপনার জেলা" class="form-input" />
-    </div>
-    <div class="form-group">
-      <label>💬 মতামত</label>
-      <textarea id="report-message" placeholder="আপনার মতামত লিখুন..." class="form-input form-textarea"></textarea>
-    </div>
-    <button class="glow-btn full-btn" onclick="submitReport()">📤 পাঠান</button>
+  onValue(ref(db,'orders'), snap => {
+    const data = snap.val()||{};
+    const myOrders = Object.entries(data)
+      .map(([id,o])=>({id,...o}))
+      .filter(o=>o.userId===currentUser.uid)
+      .sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    el.innerHTML = myOrders.length ? myOrders.map(o=>`
+      <div class="order-card">
+        <div class="order-card-header">
+          <div>
+            <p class="oc-name">${o.productName||''}</p>
+            <p class="oc-pkg">${o.packageName||''}</p>
+          </div>
+          <span class="order-status ${o.status}">${statusLabel(o.status)}</span>
+        </div>
+        <div class="order-card-body">
+          <span class="oc-amount">৳${o.amount||0}</span>
+          <span class="oc-pay">${o.paymentType==='wallet'?'💼 Wallet':'📱 bKash'}</span>
+          <span class="oc-date">${o.createdAt?new Date(o.createdAt).toLocaleDateString('bn-BD'):''}</span>
+        </div>
+      </div>`).join('') : '<p class="empty">কোনো অর্ডার নেই</p>';
+  }, {onlyOnce:true});
+}
+
+// ── Wallet / Add Money ──
+function loadWalletPage() {
+  const el = document.getElementById('wallet-content');
+  if (!el) return;
+  if (!currentUser) {
+    el.innerHTML=`<div class="login-wall"><div class="login-wall-icon">💰</div><p>Wallet দেখতে লগইন করুন</p><button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button></div>`;
+    return;
+  }
+
+  get(ref(db,'settings/bkash')).then(snap=>{
+    const b = snap.val()||{};
+    el.innerHTML = `
+      <div class="wallet-balance-card">
+        <p class="wbc-label">বর্তমান ব্যালেন্স</p>
+        <p class="wbc-amount">৳${userBalance}</p>
+        <p class="wbc-sub">SM Wallet</p>
+      </div>
+
+      <div class="add-money-form">
+        <h3 class="am-title">💰 টাকা যোগ করুন</h3>
+        <div class="bkash-info-card">
+          <p class="bkash-step">১. নিচের নম্বরে <strong>Send Money</strong> করুন:</p>
+          <div class="bkash-number">${b.number||'01XXXXXXXXX'}</div>
+          <p class="bkash-step">২. Amount ও TrxID নিচে দিন</p>
+          ${b.note?`<p class="bkash-note">⚠️ ${b.note}</p>`:''}
+        </div>
+        <div class="form-group">
+          <label>💵 পরিমাণ (টাকা)</label>
+          <input type="number" id="top-amount" placeholder="কত টাকা যোগ করবেন" class="form-input" min="10"/>
+        </div>
+        <div class="form-group">
+          <label>📱 আপনার bKash নম্বর</label>
+          <input type="tel" id="top-sender" placeholder="01XXXXXXXXX" class="form-input"/>
+        </div>
+        <div class="form-group">
+          <label>🔢 Transaction ID (TrxID)</label>
+          <input type="text" id="top-trx" placeholder="TrxID লিখুন" class="form-input"/>
+        </div>
+        <button class="glow-btn" onclick="submitTopup()">📤 সাবমিট করুন</button>
+      </div>
+
+      <div class="txn-section">
+        <h3 class="txn-title">📋 টপআপ ইতিহাস</h3>
+        <div id="txn-list"><div class="loading-spinner sm"></div></div>
+      </div>`;
+
+    loadTopupHistory();
+  });
+}
+
+window.submitTopup = async function() {
+  if (!currentUser) return;
+  const amount = parseFloat(document.getElementById('top-amount')?.value);
+  const sender = document.getElementById('top-sender')?.value.trim();
+  const trx    = document.getElementById('top-trx')?.value.trim();
+  if (!amount||amount<10) { showToast('কমপক্ষে ১০ টাকা দিন'); return; }
+  if (!sender||!trx) { showToast('সব তথ্য দিন'); return; }
+  await push(ref(db,'topup_requests'), {
+    userId: currentUser.uid, userName: currentUser.displayName||'',
+    userEmail: currentUser.email||'', amount, senderNumber: sender,
+    trxId: trx, status: 'pending', createdAt: Date.now()
+  });
+  showToast('টপআপ রিকোয়েস্ট পাঠানো হয়েছে ✅ Admin approve করার পর balance যোগ হবে।');
+  document.getElementById('top-amount').value='';
+  document.getElementById('top-sender').value='';
+  document.getElementById('top-trx').value='';
+  loadTopupHistory();
+};
+
+function loadTopupHistory() {
+  if (!currentUser) return;
+  onValue(ref(db,'topup_requests'), snap => {
+    const data = snap.val()||{};
+    const myReqs = Object.entries(data)
+      .map(([id,r])=>({id,...r}))
+      .filter(r=>r.userId===currentUser.uid)
+      .sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    const el = document.getElementById('txn-list');
+    if (!el) return;
+    el.innerHTML = myReqs.length ? myReqs.map(r=>`
+      <div class="txn-item">
+        <div><p class="txn-amount">৳${r.amount}</p><p class="txn-trx">TrxID: ${r.trxId}</p></div>
+        <span class="order-status ${r.status}">${r.status==='approved'?'APPROVED':r.status==='rejected'?'REJECTED':'PENDING'}</span>
+      </div>`).join('') : '<p class="empty-small">কোনো ইতিহাস নেই</p>';
+  }, {onlyOnce:true});
+}
+
+// ── Report ──
+function loadReportPage() {
+  const el = document.getElementById('report-content');
+  if (!el) return;
+  if (!currentUser) {
+    el.innerHTML=`<div class="login-wall"><div class="login-wall-icon">🗳️</div><p>রিপোর্ট করতে লগইন করুন</p><button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button></div>`;
+    return;
+  }
+  el.innerHTML=`<div class="report-form">
+    <div class="form-group"><label>📧 ইমেইল</label><input type="email" id="r-email" value="${currentUser.email}" class="form-input"/></div>
+    <div class="form-group"><label>👤 নাম</label><input type="text" id="r-name" value="${currentUser.displayName||''}" class="form-input"/></div>
+    <div class="form-group"><label>📍 জেলা</label><input type="text" id="r-district" placeholder="আপনার জেলা" class="form-input"/></div>
+    <div class="form-group"><label>💬 মতামত</label><textarea id="r-msg" placeholder="আপনার মতামত লিখুন..." class="form-input form-textarea"></textarea></div>
+    <button class="glow-btn" onclick="submitReport()">📤 পাঠান</button>
   </div>`;
 }
 
 window.submitReport = async function() {
-  if (!currentUser) { showToast('লগইন করুন'); return; }
-  const email    = document.getElementById('report-email')?.value.trim();
-  const name     = document.getElementById('report-name')?.value.trim();
-  const district = document.getElementById('report-district')?.value.trim();
-  const message  = document.getElementById('report-message')?.value.trim();
-  if (!email||!name||!district||!message) { showToast('সব ঘর পূরণ করুন'); return; }
-  await push(ref(db,'reports'), {email,name,district,message,userId:currentUser.uid,createdAt:Date.now()});
+  if (!currentUser) return;
+  const email=document.getElementById('r-email')?.value.trim();
+  const name=document.getElementById('r-name')?.value.trim();
+  const district=document.getElementById('r-district')?.value.trim();
+  const msg=document.getElementById('r-msg')?.value.trim();
+  if (!email||!name||!district||!msg) { showToast('সব ঘর পূরণ করুন'); return; }
+  await push(ref(db,'reports'), {email,name,district,message:msg,userId:currentUser.uid,createdAt:Date.now()});
   showToast('রিপোর্ট পাঠানো হয়েছে ✅');
-  setTimeout(() => navigateTo('home'), 1500);
+  setTimeout(()=>navigateTo('home'), 1500);
 };
 
 // ── Profile ──
@@ -604,94 +820,103 @@ function loadProfile() {
   const el = document.getElementById('profile-content');
   if (!el) return;
   if (!currentUser) {
-    el.innerHTML = `<div class="login-wall">
-      <div class="login-wall-icon">👤</div>
-      <p>প্রোফাইল দেখতে লগইন করুন</p>
-      <button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button>
-    </div>`;
+    el.innerHTML=`<div class="login-wall"><div class="login-wall-icon">👤</div><p>প্রোফাইল দেখতে লগইন করুন</p><button class="glow-btn" onclick="loginWithGoogle()">🔑 Google দিয়ে লগইন</button></div>`;
     return;
   }
-  onValue(ref(db, `users/${currentUser.uid}`), snap => {
-    const d = snap.val() || {};
-    const pic  = d.photoURL || currentUser.photoURL || '';
-    const name = d.displayName || currentUser.displayName || 'ব্যবহারকারী';
-    el.innerHTML = `<div class="profile-card">
-      <div class="profile-avatar-wrap">
-        <div class="avatar-ring">
-          ${pic ? `<img src="${pic}" class="profile-avatar"/>` : `<div class="avatar-placeholder">${name.charAt(0)}</div>`}
+  onValue(ref(db,`users/${currentUser.uid}`), snap => {
+    const d = snap.val()||{};
+    const pic  = d.photoURL||currentUser.photoURL||'';
+    const name = d.displayName||currentUser.displayName||'ব্যবহারকারী';
+    el.innerHTML = `
+      <div class="profile-card">
+        <div class="profile-avatar-wrap">
+          <div class="avatar-ring">
+            ${pic?`<img src="${pic}" class="profile-avatar"/>`:`<div class="avatar-placeholder">${name.charAt(0)}</div>`}
+          </div>
+          <div class="verified-badge">✓</div>
         </div>
-        <div class="verified-badge">✓</div>
-      </div>
-      <h2 class="profile-name">${name}</h2>
-      <p class="profile-email">${currentUser.email}</p>
-      <div class="profile-actions">
-        <button class="profile-edit-btn" onclick="editName()">✏️ নাম পরিবর্তন</button>
-        <button class="profile-edit-btn" onclick="editPic()">🖼️ ছবি পরিবর্তন</button>
-        ${d.photoURL && d.photoURL !== currentUser.photoURL ? `<button class="profile-edit-btn danger" onclick="resetPic()">🔄 ডিফল্ট ছবি</button>` : ''}
-      </div>
-      <button class="logout-btn" onclick="doLogout()">🚪 লগআউট</button>
-    </div>`;
-  }, {onlyOnce: true});
+        <h2 class="profile-name">${name}</h2>
+        <p class="profile-email">${currentUser.email}</p>
+        <div class="wallet-info-profile">
+          <span>💰 SM Wallet</span>
+          <span class="wallet-bal">৳${d.wallet||0}</span>
+        </div>
+        <div class="form-group" style="width:100%;max-width:320px;">
+          <label>✈️ Telegram Username</label>
+          <input type="text" id="tg-username" value="${d.telegramUsername||''}" placeholder="@username" class="form-input"/>
+        </div>
+        <div class="profile-actions">
+          <button class="profile-edit-btn" onclick="editName()">✏️ নাম পরিবর্তন</button>
+          <button class="profile-edit-btn" onclick="saveTelegram()">💾 Telegram সেভ</button>
+          <button class="profile-edit-btn" onclick="editPic()">🖼️ ছবি পরিবর্তন</button>
+        </div>
+        <button class="logout-btn" onclick="doLogout()">🚪 লগআউট</button>
+      </div>`;
+  }, {onlyOnce:true});
 }
 
-window.editName = () => {
-  const n = prompt('নতুন নাম লিখুন:');
-  if (!n?.trim()) return;
-  update(ref(db,`users/${currentUser.uid}`), {displayName: n.trim()});
-  showToast('নাম আপডেট হয়েছে ✅');
-  setTimeout(loadProfile, 500);
-};
-window.editPic = () => {
-  const u = prompt('ছবির URL লিখুন:');
-  if (!u?.trim()) return;
-  update(ref(db,`users/${currentUser.uid}`), {photoURL: u.trim()});
-  showToast('ছবি আপডেট হয়েছে ✅');
-  setTimeout(loadProfile, 500);
-};
-window.resetPic = () => {
-  update(ref(db,`users/${currentUser.uid}`), {photoURL: ''});
-  showToast('ডিফল্ট ছবিতে ফিরে গেছে');
-  setTimeout(loadProfile, 500);
-};
-window.doLogout = async () => {
-  await signOut(auth);
-  showToast('লগআউট হয়েছে');
-  setTimeout(loadProfile, 500);
-};
+window.editName = ()=>{ const n=prompt('নতুন নাম:'); if(!n?.trim())return; update(ref(db,`users/${currentUser.uid}`),{displayName:n.trim()}); showToast('নাম আপডেট ✅'); setTimeout(loadProfile,500); };
+window.editPic = ()=>{ const u=prompt('ছবির URL:'); if(!u?.trim())return; update(ref(db,`users/${currentUser.uid}`),{photoURL:u.trim()}); showToast('ছবি আপডেট ✅'); setTimeout(loadProfile,500); };
+window.saveTelegram = ()=>{ const v=document.getElementById('tg-username')?.value.trim(); if(!v)return; update(ref(db,`users/${currentUser.uid}`),{telegramUsername:v}); showToast('Telegram সেভ ✅'); };
+window.doLogout = async()=>{ await signOut(auth); showToast('লগআউট হয়েছে'); setTimeout(loadProfile,500); };
+
+// ── News ──
+function loadNews() {
+  onValue(ref(db,'news'), snap => {
+    const data=snap.val()||{};
+    const posts=Object.entries(data).map(([id,n])=>({id,...n})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    const el=document.getElementById('news-content');
+    if (!el) return;
+    el.innerHTML=posts.length?posts.map(p=>`
+      <div class="news-card">
+        <div class="news-header"><span class="news-badge">📢 আপডেট</span><span class="news-date">${p.createdAt?new Date(p.createdAt).toLocaleDateString('bn-BD'):''}</span></div>
+        <p class="news-text">${p.text||''}</p>
+        ${p.imageUrl?`<img src="${p.imageUrl}" class="news-img" loading="lazy"/>`:''}
+        ${p.link?`<a href="${p.link}" class="news-link" target="_blank">🔗 বিস্তারিত</a>`:''}
+      </div>`).join('') : '<p class="empty">কোনো নিউজ নেই</p>';
+  }, {onlyOnce:true});
+}
 
 // ── Developer ──
 function loadDeveloper() {
-  const el = document.getElementById('developer-content');
+  const el=document.getElementById('developer-content');
   if (!el) return;
-  onValue(ref(db,'settings/developer'), snap => {
-    const d = snap.val() || {};
-    el.innerHTML = `<div class="profile-card">
-      <div class="profile-avatar-wrap">
-        <div class="avatar-ring gold">
-          ${d.pic ? `<img src="${d.pic}" class="profile-avatar"/>` : `<div class="avatar-placeholder gold">👑</div>`}
-        </div>
-        <div class="verified-badge gold">✓</div>
-      </div>
+  onValue(ref(db,'settings/developer'), snap=>{
+    const d=snap.val()||{};
+    el.innerHTML=`<div class="profile-card">
+      <div class="profile-avatar-wrap"><div class="avatar-ring gold">${d.pic?`<img src="${d.pic}" class="profile-avatar"/>`:`<div class="avatar-placeholder gold">👑</div>`}</div><div class="verified-badge gold">✓</div></div>
       <h2 class="profile-name">${d.name||'SM MEHMUD'}</h2>
-      ${d.district ? `<p class="profile-district">📍 ${d.district}</p>` : ''}
-      ${d.bio ? `<p class="profile-bio">${d.bio}</p>` : ''}
+      ${d.district?`<p class="profile-district">📍 ${d.district}</p>`:''}
+      ${d.bio?`<p class="profile-bio">${d.bio}</p>`:''}
       <div class="dev-links">
-        ${d.telegram ? `<a href="${d.telegram}" class="dev-link tg" target="_blank">✈️ Telegram</a>` : ''}
-        ${d.facebook ? `<a href="${d.facebook}" class="dev-link fb" target="_blank">👤 Facebook</a>` : ''}
+        ${d.telegram?`<a href="${d.telegram}" class="dev-link tg" target="_blank">✈️ Telegram</a>`:''}
+        ${d.facebook?`<a href="${d.facebook}" class="dev-link fb" target="_blank">👤 Facebook</a>`:''}
       </div>
       <p class="dev-label">💻 Developer of SM Premium</p>
     </div>`;
-  }, {onlyOnce: true});
+  }, {onlyOnce:true});
 }
+
+// ── Policy ──
+function loadPolicy(type) {
+  const el=document.getElementById(type+'-content');
+  if (!el) return;
+  onValue(ref(db,'settings/pages/'+type), snap=>{
+    const text=snap.val()||'';
+    el.innerHTML=text?`<div class="policy-body">${text.replace(/\n/g,'<br/>')}</div>`:'<p class="empty">এখনো যোগ করা হয়নি</p>';
+  }, {onlyOnce:true});
+}
+
+// ── Modal ──
+window.openModal = function(id) { document.getElementById(id)?.classList.add('active'); };
+window.closeModal = function(id) { document.getElementById(id)?.classList.remove('active'); };
 
 // ── Toast ──
 window.showToast = function(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
 };
-
-navigateTo('home', false);
 </script>
 </body>
 </html>
